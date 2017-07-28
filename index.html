@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hangman</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/hangman.css">
+  <link rel="stylesheet" href="assets/css/board.css">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body class="main-page">
+  <h2>Let's play a little game...</h2>
+  <div id="fullscreen-modal" class="display-none">
+    <h1>YOU LOSE.</h1>
+    <img id="girl-face" src="assets/images/ring-face.jpg" class="display-none">
+  </div>
+  <div id="instructions" class="section"></div>
+  <div id="placeholder" class="section"></div>
+  <div id="chances" class="section"></div>
+  <div id="score" class="section"></div>
+  <div id="board" class="section">
+    <img id="board-img4" src="assets/images/ring-girl.png" class="img-rounded">
+    <img id="board-img3" src="assets/images/static.gif" class="img-rounded">
+    <img id="board-img2" src="assets/images/ring.png" class="img-rounded">
+    <img id="board-img" src="assets/images/ringTV.png" class="img-rounded">
+    <div id="div-behind-front" class="transparent"></div>
+    <img id="board-img-front" src="assets/images/ring-girl-on-way-out.gif" class="display-none">
+    <img id="board-img-front2" src="assets/images/ring-girl-standing.gif" class="display-none">
+    <div id="div-front" class="transparent"></div>
+  </div>
+  <div class="container">
+    <div class="jumbotron">
+      <div id="guessed" class="section"></div>
+    </div>
+  </div>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="assets/js/utility.js"></script>
+  <script type="text/javascript" src="assets/js/board.js"></script>
+  <script type="text/javascript" src="assets/js/hangman.js"></script>
+</body>
+
+</html>
