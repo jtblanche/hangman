@@ -74,7 +74,7 @@ var board = {
           board.screamAudio.pause();
           board.divFullscreen.className = 'display-none';
           board.scaryFace.className = 'display-none';
-        }, 2000);
+        }, 1000);
       }, 2000);
     }
   ],
