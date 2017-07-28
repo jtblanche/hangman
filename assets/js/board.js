@@ -15,7 +15,7 @@ var board = {
   baseImage: document.getElementById('board-img'),
   tvOnImage: document.getElementById('board-img2'),
   staticImage: document.getElementById('board-img3'),
-  staticSound: null,
+  staticSound: createAudio('assets/audio/tv-static-05.wav',{isLoop: true, autoPlay: false}),
   divBehindGirl: document.getElementById('div-behind-front'),
   ringGirlWellImage: document.getElementById('board-img4'),
   ringGirlComingOutImage: document.getElementById('board-img-front'),
@@ -23,7 +23,7 @@ var board = {
   divFront: document.getElementById('div-front'),
   divFullscreen: document.getElementById('fullscreen-modal'),
   scaryFace: document.getElementById('girl-face'),
-  screamAudio: null,
+  screamAudio: createAudio('assets/audio/scream.mp3',{isLoop: true, autoPlay: false}),
   animationIndex: 0,
   animationActions: [
     function firstFlicker() {
@@ -31,7 +31,8 @@ var board = {
     },
     function thenStatic() {
       setTimeout(function waitForStatic() {
-        board.staticSound = createAudio('assets/audio/tv-static-05.wav',{isLoop: true, autoPlay: true});
+        board.staticSound.currentTime = 0;
+        board.staticSound.play();
         board.tvOnImage.className = 'display-none';
       }, 1000);
     },
@@ -43,7 +44,8 @@ var board = {
     },
     function thenComeOut() {
       setTimeout(function waitForComeOut() {
-        board.staticSound = createAudio('assets/audio/tv-static-05.wav',{isLoop: true, autoPlay: true});
+        board.staticSound.currentTime = 0;
+        board.staticSound.play();
         board.staticImage.className = 'img-rounded';
         board.ringGirlComingOutImage.className = 'img-rounded';
       }, 1000);
@@ -65,7 +67,8 @@ var board = {
       board.divFullscreen.className = '';
       board.chances.className = 'section';
       setTimeout(function waitForFace() {
-        board.screamAudio = createAudio('assets/audio/scream.mp3',{isLoop: true, autoPlay: true});
+        board.screamAudio.currentTime = 0;
+        board.screamAudio.play();
         board.scaryFace.className = 'fullscreen';
         setTimeout(function waitForSweetRelease() {
           board.screamAudio.pause();

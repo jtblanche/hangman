@@ -148,6 +148,9 @@ var game = {
     if (board.staticSound) {
       board.staticSound.pause();
     }
+    if (board.screamAudio) {
+      board.screamAudio.pause();
+    }
     if(words.length) {
       board.setInstructions('Hit "p" to play again.');
     } else {
