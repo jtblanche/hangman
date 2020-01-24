@@ -1,20 +1,9 @@
 // ==============================================
 // =              variables                     =
 // ==============================================
-var MAX_FAILURES = 7;
-// ==============================================
-// =          utility functions                 =
-// ==============================================
-function createAudio(file, options) {
-  var song = new Audio(file);
-  song.loop = options && options.isLoop;
-  if (options.autoPlay) {
-    song.play();
-  }
-  return song;
-}
-function createDiv(divClass, html) {
-  var newDiv = document.createElement('div');
+const MAX_FAILURES = 7;
+const createDiv = (divClass, html) => {
+  const newDiv = document.createElement('div');
   if (divClass) {
     newDiv.className = divClass;
   }
@@ -23,11 +12,10 @@ function createDiv(divClass, html) {
   }
   return newDiv;
 }
-function isLetter(str) {
-  return str.length === 1 && str.match(/[a-z]/i);
-}
-function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
+const isLetter = str => str.length === 1 && str.match(/[a-z]/i);
+
+const shuffle = array => {
+  let currentIndex = array.length, temporaryValue, randomIndex;
 
   // While there remain elements to shuffle...
   while (0 !== currentIndex) {
