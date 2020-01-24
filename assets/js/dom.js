@@ -24,7 +24,7 @@ const board = {
 	setChances: function(failureCount) {
 		const chancesLeft = MAX_FAILURES - failureCount;
         const text = (chancesLeft === 1) ? "1 chance left." : chancesLeft + " chances left.";
-		htmlElements.score.innerHTML = text;
+		htmlElements.chances.innerHTML = text;
 	},
 	setInstructions: function(i) {
 		htmlElements.instructions.innerHTML = i;
