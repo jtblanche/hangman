@@ -43,6 +43,7 @@ const game = {
 		this.word = Word(words.pop());
 		this.failureCount = 0;
 		this.guessedLetters = [];
+		board.setChances(this.failureCount);
         board.reset(this.word);
 		animations.reset();
 	},

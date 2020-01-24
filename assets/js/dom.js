@@ -80,7 +80,6 @@ const board = {
 		this.setInstructions("Type any letter to make a guess.");
 		this.setPlaceholder(word.getDisplay());
 		this.setScore(this.score);
-		this.setChances(this.failureCount);
 		htmlElements.guessed.innerHTML = "";
 	}
 };
