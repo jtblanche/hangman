@@ -1,0 +1,14 @@
+@keyframes big-font {
+	0% {
+		font-size: 12px;
+	}
+	100% {
+		font-size: 200px;
+	}
+}
+
+.section.big {
+	font-size: 200px;
+	animation-name: big-font;
+	animation-duration: 30s;
+}

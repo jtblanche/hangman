@@ -52,7 +52,7 @@ class Game {
         this._animations.reset();
     }
     action(key) {
-        if (!isLetter(key)) {
+        if (!key || !isLetter(key)) {
             return;
         }
 		if (this.isAllComplete){
