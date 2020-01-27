@@ -1,7 +1,13 @@
 // ==============================================
 // =              variables                     =
 // ==============================================
+const IS_CORRECT = true;
+const IS_INCORRECT = false;
+const NOT_ACCEPTED = null;
 const MAX_FAILURES = 7;
+// ==============================================
+// =              functions                     =
+// ==============================================
 const createDiv = (divClass, html) => {
   const newDiv = document.createElement('div');
   if (divClass) {
