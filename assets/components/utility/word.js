@@ -1,11 +1,4 @@
-import utility from "../../js/utility.js";
-const {
-    IS_CORRECT,
-    IS_INCORRECT,
-    NOT_ACCEPTED,
-    isLetter
-} = utility;
-export default class Word {
+class Word {
     constructor (text) {
         this.text = text;
         this.guessedLetters = [];

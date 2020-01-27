@@ -1,9 +1,4 @@
-import Display from "../utility/display.js";
-import utility from "../../js/utility.js";
-const {
-    MAX_FAILURES
-} = utility;
-export default class ChancesDisplay extends Display {
+class ChancesDisplay extends Display {
     constructor() {
         super(document.getElementById("chances"));
         this._chancesLeft = MAX_FAILURES;

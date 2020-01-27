@@ -1,4 +1,4 @@
-export default class Display {
+class Display {
     constructor(html) {
         this.html = html;
     }

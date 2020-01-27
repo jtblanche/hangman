@@ -1,8 +1,3 @@
-import utility from "../../js/utility.js";
-const {
-    shuffle,
-    createDiv
-} = utility;
 const createStickies = () => {
 	// this creates a different combination of
 	// animation times so that the button images
@@ -28,7 +23,7 @@ class Letter {
         }
     }
 }
-export default class LetterBox {
+class LetterBox {
     constructor() {
         this.html = document.getElementById("guessed");
     }

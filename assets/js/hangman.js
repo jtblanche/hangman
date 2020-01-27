@@ -1,36 +1,60 @@
-import ScoreBox from "../components/score-box/logic.js";
-import LetterBox from "../components/letter-box/logic.js";
-import Animations from "../components/animations/logic.js";
-import "./reset.css";
-import "./hangman.css";
-import "./board.css";
-import utility from "./utility.js";
-const {
-    IS_INCORRECT,
-    IS_CORRECT
-} = utility;
 class Game {
     constructor() {
-        this._scoreBox = new ScoreBox();
+        this._wordBank = new WordBank();
+        this.word = this._wordBank.getWord();
+        this._scoreBox = new ScoreBox(this._word);
         this._letterBox = new LetterBox();
         this._animations = new Animations();
         this.isOnTimeout = false;
     }
+    get score() {
+        return this._scoreBox.score;
+    }
+    get chancesLeft() {
+        return this._scoreBox.chancesLeft;
+    }
+    get isGameLost() {
+        return this.chancesLeft <= 0;
+    }
+    set word(word) {
+        this._word = new Word(word);
+    }
     get isGameComplete() {
-        return this._scoreBox.isGameComplete;
+        return this._word.isComplete || this.isGameLost;
     }
     get isAllComplete() {
-        return this._scoreBox.isAllComplete;
+        return this.isGameComplete && this._wordBank.isFinished;
+    }
+    hit(key) {
+        this._scoreBox.hit();
+        this._letterBox.addLetter(key);
+        if (this._word.isComplete) {
+            this._scoreBox.win();
+        }
+    }
+    miss(key) {
+        this._animations.next();
+        this._scoreBox.miss();
+        this._letterBox.addLetter(key, "incorrect");
+        this.isOnTimeout = true;
+        setTimeout(() => {
+            this.isOnTimeout = false;
+            this.action(this.queuedLetter);
+        }, 2000);
     }
     reset(hardReset) {
-        this._scoreBox.reset(hardReset);
+        if (hardReset) {
+            this._wordBank.initialize();
+        }
+        this.word = this._wordBank.getWord();
+        this._scoreBox.reset(this._word, hardReset);
         this._letterBox.reset();
         this._animations.reset();
     }
-    guess(letter) {
-        return this._scoreBox.guess(letter);
-    }
     action(key) {
+        if (!isLetter(key)) {
+            return;
+        }
 		if (this.isAllComplete){
             if(key === "r") {
                 this.reset(true);
@@ -48,19 +72,13 @@ class Game {
             return;
         } 
         delete this.queuedLetter;
-        const result = this.guess(key);
+        const result = this._word.guess(key);
         switch(result) {
             case IS_INCORRECT:
-                this._animations.next();
-                this._letterBox.addLetter(key, "incorrect");
-                this.isOnTimeout = true;
-                setTimeout(() => {
-                    this.isOnTimeout = false;
-                    this.action(this.queuedLetter);
-                }, 2000);
+                this.miss(key);
                 break;
             case IS_CORRECT:
-                this._letterBox.addLetter(key);
+                this.hit(key);
                 break;
             default:
                 return;

@@ -1,12 +1,10 @@
-import Display from "../utility/display.js";
-import Word from "../utility/word.js";
-export default class PlaceholderDisplay extends Display {
+class PlaceholderDisplay extends Display {
     constructor(word) {
         super(document.getElementById("placeholder"));
         this.word = word;
     }
     set word(word) {
-        this._currentWord = new Word(word);
+        this._currentWord = word;
         this.updateDisplay();
     }
     win() {
@@ -23,11 +21,5 @@ export default class PlaceholderDisplay extends Display {
     }
     get display() {
         return this._text ? this._text : this._currentWord.display;
-    }
-    get isComplete() {
-        return this._currentWord.isComplete;
-    }
-    guess(letter) {
-        return this._currentWord.guess(letter);
     }
 }

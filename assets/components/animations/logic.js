@@ -12,7 +12,7 @@ class Sound {
 	}
 }
 
-export default class Animations {
+class Animations {
 	constructor() {
 		this.sounds = {
 			static: new Sound("assets/audio/tv-static.wav"),
