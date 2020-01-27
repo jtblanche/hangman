@@ -1,4 +1,5 @@
-class ScoreDisplay extends Display {
+import Display from "../utility/display.js";
+export default class ScoreDisplay extends Display {
     constructor() {
         super(document.getElementById("score"));
         this._score = 0;

@@ -1,0 +1,145 @@
+@keyframes flicker-bc {
+  0% {
+    background-color: rgb(0, 0, 0);
+  }
+  64% {
+    background-color: rgb(0, 0, 0);
+  }
+  65% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  75% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  76% {
+    background-color: rgb(0, 0, 0);
+  }
+  90% {
+    background-color: rgb(0, 0, 0);
+  }
+  91% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+@keyframes fade-black-25 {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  25% {
+    background-color: rgb(0, 0, 0);
+  }
+}
+@keyframes fade-black-75 {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  75% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: rgb(0, 0, 0);
+  }
+}
+@keyframes big-font {
+  0% {
+    font-size: 12px;
+  }
+  100% {
+    font-size: 200px;
+  }
+}
+#board {
+  height: 289px;
+  width: 550px;
+  position: relative;
+  margin: auto;
+  margin-bottom: 20px;
+}
+#fullscreen-modal {
+  z-index: 10;
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+}
+#fullscreen-modal h1 {
+  line-height: 400px;
+  text-align: center;
+}
+
+#board-img {
+  z-index: 4;
+}
+
+#board-img2 {
+  z-index: 2;
+}
+#board-img3 {
+  z-index: 1;
+}
+#board-img-front {
+  z-index: 3;
+}
+.section .img-rounded {
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.section #div-behind-front{
+  z-index: 5;
+}
+.section #div-front {
+  z-index: 7;
+}
+.section .img-rounded#board-img-front,
+.section .img-rounded#board-img-front2 {
+  background-color: rgba(0, 0, 0, 0);
+  z-index:6;
+}
+
+.section .img-rounded.flicker-tv {
+  background-color: rgba(0, 0, 0, 0);
+  animation-name: flicker-bc;
+  animation-duration: 2s;
+}
+.display-none {
+  display: none;
+}
+.section .transparent,
+.section .black {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.fade-black-at-25, .fade-black-at-75 {
+  animation-duration: 2s;
+}
+.fade-black-at-25 {
+  animation-name: fade-black-25;
+}
+.fade-black-at-75 {
+  animation-name: fade-black-75;
+}
+.section .transparent {
+  background-color: rgba(0, 0, 0, 0);
+}
+.section .black {
+  background-color: rgb(0, 0, 0);
+}
+.section.big {
+  font-size: 200px;
+  animation-name: big-font;
+  animation-duration: 30s;
+}
+.fullscreen {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  z-index: 11;
+}

@@ -1,3 +1,7 @@
+import utility from "../../js/utility.js";
+const {
+    shuffle
+} = utility;
 const WORD_LIST = [
 	"holy water",
 	"priest",
@@ -15,7 +19,7 @@ const WORD_LIST = [
 	"appease",
 	"voodoo"
 ];
-class WordBank {
+export default class WordBank {
     constructor() {
         this.initialize();
     }

@@ -1,4 +1,15 @@
-class ScoreBox {
+import WordBank from "../utility/word-bank.js";
+import PlaceholderDisplay from "../placeholder-display/logic.js";
+import InstructionsDisplay from "../instructions-display/logic.js";
+import ChancesDisplay from "../chances-display/logic.js";
+import ScoreDisplay from "../score-display/logic.js";
+import utility from "../../js/utility.js";
+const {
+    IS_INCORRECT,
+    IS_CORRECT,
+    NOT_ACCEPTED
+} = utility;
+export default class ScoreBox {
     constructor() {
         this._wordBank = new WordBank();
         this._placeholder = new PlaceholderDisplay(this._wordBank.getWord());

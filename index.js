@@ -1,0 +1,15 @@
+import "./index.html";
+import "./assets/images/ring-face.jpg";
+import "./assets/images/ring-girl-on-way-out.gif";
+import "./assets/images/ring-girl-standing.gif";
+import "./assets/images/ring-girl.png";
+import "./assets/images/ring.png";
+import "./assets/images/ringTV.png";
+import "./assets/images/skull.gif";
+import "./assets/images/smoke.png";
+import "./assets/images/spider-web.png";
+import "./assets/images/spider.gif";
+import "./assets/images/static.gif";
+import "./assets/audio/scream.mp3";
+import "./assets/audio/tv-static.wav";
+import "./assets/js/hangman.js"

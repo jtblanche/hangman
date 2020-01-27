@@ -1,4 +1,6 @@
-class PlaceholderDisplay extends Display {
+import Display from "../utility/display.js";
+import Word from "../utility/word.js";
+export default class PlaceholderDisplay extends Display {
     constructor(word) {
         super(document.getElementById("placeholder"));
         this.word = word;

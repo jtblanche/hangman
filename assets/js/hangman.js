@@ -1,3 +1,14 @@
+import ScoreBox from "../components/score-box/logic.js";
+import LetterBox from "../components/letter-box/logic.js";
+import Animations from "../components/animations/logic.js";
+import "./reset.css";
+import "./hangman.css";
+import "./board.css";
+import utility from "./utility.js";
+const {
+    IS_INCORRECT,
+    IS_CORRECT
+} = utility;
 class Game {
     constructor() {
         this._scoreBox = new ScoreBox();

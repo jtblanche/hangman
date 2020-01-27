@@ -38,3 +38,12 @@ const shuffle = array => {
 
   return array;
 }
+export default {
+    IS_CORRECT,
+    IS_INCORRECT,
+    NOT_ACCEPTED,
+    MAX_FAILURES,
+    createDiv,
+    isLetter,
+    shuffle
+}
